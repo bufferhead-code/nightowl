@@ -1,10 +1,9 @@
-import './darkmode.css'
 
 const LOCAL_STORAGE_KEY = 'nightowl-color-scheme'
 const LIGHT = 'light';
 const DARK = 'dark';
 
-let store : Storage | null = null;
+let store: Storage | null = null;
 let persistPreference = true;
 let mode = LIGHT;
 
@@ -14,15 +13,58 @@ try {
     // Do nothing. The user probably blocks cookies.
 }
 
+function loadCss() {
+    // fix css loading via vite
+    // https://github.com/vitejs/vite/issues/8976
+    const css = document.createElement('style');
+    css.innerHTML = `
+    /* Prevent inconsistencies for positioning */
+    .nightowl-light body{
+        filter: invert(0%);
+    }
+    
+    .nightowl-dark {
+    /* Firefox fallback. */
+    background-color: #111;
+    }
+
+    .nightowl-dark body {
+        filter: invert(100%) hue-rotate(180deg);
+    }
+
+    /* Do not invert media (revert the invert). */
+    .nightowl-dark img, .nightowl-dark video, .nightowl-dark iframe {
+        filter: invert(100%) hue-rotate(180deg);
+    }
+
+    /* Improve contrast on icons. */
+    .nightowl-dark .icon {
+        filter: invert(15%) hue-rotate(180deg);
+    }
+
+    /* Re-enable code block backgrounds. */
+     .nightowl-dark pre {
+        filter: invert(6%);
+    }
+
+    /* Improve contrast on list item markers. */
+    .nightowl-dark li::marker {
+        color: #666;
+    }
+    `;
+    document.head.appendChild(css);
+}
+
 window.addEventListener('load', () => {
-   initializeNightowl();
-   initializeSwitcher();
+    loadCss();
+    initializeNightowl();
+    initializeSwitcher();
 });
 
 function enableDarkMode() {
     mode = DARK;
     const htmlElement = document.querySelector('html');
-    if(htmlElement){
+    if (htmlElement) {
         htmlElement.classList.remove('nightowl-light');
         htmlElement.classList.add('nightowl-dark');
     }
@@ -31,7 +73,7 @@ function enableDarkMode() {
 function enableLightMode() {
     mode = LIGHT;
     const htmlElement = document.querySelector('html');
-    if(htmlElement){
+    if (htmlElement) {
         htmlElement.classList.remove('nightowl-dark');
         htmlElement.classList.add('nightowl-light');
     }
@@ -43,10 +85,9 @@ function toggleMode() {
 }
 
 function updateMode() {
-    if(mode === DARK){
+    if (mode === DARK) {
         enableDarkMode();
-    }
-    else{
+    } else {
         enableLightMode();
     }
     setSwitcherIcon();
@@ -54,8 +95,8 @@ function updateMode() {
 
 function setSwitcherIcon() {
     const switcher = document.getElementById('nightowl-switcher-default');
-    if(switcher){
-        const lightIcon =  '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 25px; height:25px;">\n' +
+    if (switcher) {
+        const lightIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 25px; height:25px;">\n' +
             '  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />\n' +
             '</svg>';
         const darkIcon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 25px; height:25px;">\n' +
@@ -67,7 +108,7 @@ function setSwitcherIcon() {
 
 }
 
-function initializeSwitcher(){
+function initializeSwitcher() {
     const switcher = document.createElement('div');
     console.log(window.innerWidth);
     switcher.id = 'nightowl-switcher-default';
@@ -108,7 +149,7 @@ function checkForRememberedValue() {
 
     let rememberedValue = null;
     try {
-        if(store){
+        if (store) {
             rememberedValue = store.getItem(LOCAL_STORAGE_KEY);
         }
     } catch (err) {
@@ -134,9 +175,9 @@ function initializeNightowl() {
 }
 
 function storeModeInLocalStorage() {
-    if(persistPreference && mode !== null){
+    if (persistPreference && mode !== null) {
         try {
-            if(store){
+            if (store) {
                 store.setItem(LOCAL_STORAGE_KEY, mode);
             }
         } catch (err) {

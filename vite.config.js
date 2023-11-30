@@ -1,8 +1,12 @@
 // vite.config.js
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
 export default defineConfig({
+    plugins: [
+        libInjectCss(), // For a simple usage
+    ],
     build: {
         lib: {
             // Could also be a dictionary or array of multiple entry points
@@ -11,8 +15,10 @@ export default defineConfig({
             // the proper extensions will be added
             fileName: 'nightowl',
         },
-        rollupOptions: {
-
-        },
-    },
+        rollupOption: {
+            output: {
+                intro: 'import "./style.css";',
+            }
+        }
+    }
 })

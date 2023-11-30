@@ -1,6 +1,6 @@
 {
-  "name": "nightowl",
-  "version": "0.0.3",
+  "name": "@bufferhead/nightowl",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -4,7 +4,7 @@
 
 A "micro-framework" (*hacky script) that adds dark mode to any website with a single line of code.
 
-**You can learn more about how it works and how i made it [here](http://www.youtube.com/watch?v=YaX5ZAEqXD8)**
+**You can learn more about how it works and how i made it [here](http://www.youtube.com/watch?v=JONzCyVXa60)** 
 
 [![Youtube Video about how this project was made](http://img.youtube.com/vi/JONzCyVXa60/0.jpg)](http://www.youtube.com/watch?v=JONzCyVXa60 "Add Dark Mode to any Website with a single line of code")
 

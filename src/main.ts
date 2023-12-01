@@ -33,7 +33,7 @@ function loadCss() {
     }
 
     /* Do not invert media (revert the invert). */
-    .nightowl-dark img, .nightowl-dark video, .nightowl-dark iframe {
+    .nightowl-dark img, .nightowl-dark video, .nightowl-dark iframe, .nightowl-daylight {
         filter: invert(100%) hue-rotate(180deg);
     }
 
@@ -103,7 +103,7 @@ function setSwitcherIcon() {
             '  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />\n' +
             '</svg>';
 
-        switcher.innerHTML = mode === DARK ? lightIcon : darkIcon;
+        switcher.innerHTML = mode === DARK ? darkIcon : lightIcon;
     }
 
 }
@@ -113,8 +113,8 @@ function initializeSwitcher() {
     console.log(window.innerWidth);
     switcher.id = 'nightowl-switcher-default';
     switcher.style.position = 'fixed';
-    switcher.style.left = 'calc(100vw - 80px)';
-    switcher.style.top = 'calc(100vh - 80px)';
+    switcher.style.left = 'calc(100vw - 100px)';
+    switcher.style.top = 'calc(10px)';
     switcher.style.width = '50px';
     switcher.style.height = '50px';
     switcher.style.borderRadius = '50%';

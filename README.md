@@ -3,6 +3,13 @@
 
 ![image](https://github.com/bufferhead-code/nightowl/assets/6266887/6dbd652a-0307-4d2b-ac9e-26230b8b59c7)
 
+## Integration
+
+```
+<script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"></script>
+```
+
+
 
 ## Credits
 

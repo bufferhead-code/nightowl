@@ -33,7 +33,7 @@ function loadCss() {
     }
 
     /* Do not invert media (revert the invert). */
-    .nightowl-dark img, .nightowl-dark video, .nightowl-dark iframe, .nightowl-daylight {
+    .nightowl-dark img, .nightowl-dark video, .nightowl-dark iframe, .nightowl-dark .nightowl-daylight {
         filter: invert(100%) hue-rotate(180deg);
     }
 

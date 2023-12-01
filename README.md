@@ -1,7 +1,27 @@
+![image](https://github.com/bufferhead-code/nightowl/assets/6266887/6dbd652a-0307-4d2b-ac9e-26230b8b59c7)
+
 ## Nightowl
 
+A "micro-framework" (*hacky script) that adds dark mode to any website with a single line of code.
 
-![image](https://github.com/bufferhead-code/nightowl/assets/6266887/6dbd652a-0307-4d2b-ac9e-26230b8b59c7)
+**You can learn more about how it works and how i made it [here](http://www.youtube.com/watch?v=YaX5ZAEqXD8)**
+
+[![Youtube Video about how this project was made](http://img.youtube.com/vi/JONzCyVXa60/0.jpg)](http://www.youtube.com/watch?v=JONzCyVXa60 "Add Dark Mode to any Website with a single line of code")
+
+## State of this project
+
+This project is still in an prototyping stage, the API is still subject to change. 
+Please only use it with fixed Minor versions.
+
+## Known issues
+
+* Position absolute and position fixed elements might not work as expected
+* The Toggle Button Overlay has weird paddings sometimes
+
+## Roadmap (maybe)
+
+[] Add more utility classes for improving contrast
+[] Add better support for box-shadows
 
 ## Integration
 

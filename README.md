@@ -25,10 +25,15 @@ Please only use it with fixed Minor versions.
 
 ## Integration
 
+Integration can be achieved by adding one of the following script tag to your website.
+
 ```
 <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"></script>
 ```
 
+```
+<script type="module" src="./node_modules/@bufferhead/nightowl/dist/nightowl.js"></script>
+```
 
 
 ## Credits

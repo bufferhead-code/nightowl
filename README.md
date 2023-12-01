@@ -1,7 +1,7 @@
 ## Nightowl
 
-![image](https://github.com/bufferhead-code/nightowl/assets/6266887/d8bc8052-b5b1-47d5-81f1-ce69f3a4a92d)
 
+![image](https://github.com/bufferhead-code/nightowl/assets/6266887/6dbd652a-0307-4d2b-ac9e-26230b8b59c7)
 
 
 ## Credits

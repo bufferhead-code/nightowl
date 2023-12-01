@@ -1,5 +1,6 @@
 ## Nightowl
 
+![image](https://github.com/bufferhead-code/nightowl/assets/6266887/d8bc8052-b5b1-47d5-81f1-ce69f3a4a92d)
 
 
 

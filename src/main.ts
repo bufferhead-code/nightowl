@@ -3,7 +3,7 @@ const LIGHT = "light";
 const DARK = "dark";
 let store: Storage | null = null;
 let persistPreference = true;
-let mode = window.defaultMode === "dark" ? DARK : LIGHT;
+let mode = LIGHT;
 
 try {
   store = localStorage;
@@ -190,9 +190,8 @@ function storeModeInLocalStorage() {
 
 function hasNativeDarkPrefersColorScheme() {
   return (
-    window.defaultMode === "dark" ||
-    (window.matchMedia &&
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ||
-        window.matchMedia("(prefers-color-scheme:dark)").matches))
+    window.matchMedia &&
+    (window.matchMedia("(prefers-color-scheme: dark)").matches ||
+      window.matchMedia("(prefers-color-scheme:dark)").matches)
   );
 }

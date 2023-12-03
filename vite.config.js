@@ -2,10 +2,10 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(import.meta.url)
 
 export default defineConfig({
     plugins: [

@@ -27,10 +27,17 @@ Please only use it with fixed Minor versions.
 
 Integration can be achieved by adding one of the following script tag to your website.
 
+Using a CDN :
 ```
 <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"></script>
 ```
+Using a local install :
 
+-First install Nightowl in your project using npm
+```
+npm install @bufferhead/nightowl
+```
+-Then add this <script> tag to your index:
 ```
 <script type="module" src="./node_modules/@bufferhead/nightowl/dist/nightowl.js"></script>
 ```

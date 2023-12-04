@@ -1,3 +1,3 @@
 interface Window {
-  buttonMode: string;
+    buttonMode: string
 }

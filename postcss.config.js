@@ -1,5 +1,7 @@
-export default{
+export default {
     plugins: {
-        'postcss-nesting': { /* plugin options */ },
-    },
+        'postcss-nesting': {
+            /* plugin options */
+        }
+    }
 }

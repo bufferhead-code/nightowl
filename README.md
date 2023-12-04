@@ -2,21 +2,21 @@
 
 ## Nightowl
 
-A "micro-framework" (*hacky script) that adds dark mode to any website with a single line of code.
+A "micro-framework" (\*hacky script) that adds dark mode to any website with a single line of code.
 
-**You can learn more about how it works and how i made it [here](http://www.youtube.com/watch?v=JONzCyVXa60)** 
+**You can learn more about how it works and how i made it [here](http://www.youtube.com/watch?v=JONzCyVXa60)**
 
-[![Youtube Video about how this project was made](http://img.youtube.com/vi/JONzCyVXa60/0.jpg)](http://www.youtube.com/watch?v=JONzCyVXa60 "Add Dark Mode to any Website with a single line of code")
+[![Youtube Video about how this project was made](http://img.youtube.com/vi/JONzCyVXa60/0.jpg)](http://www.youtube.com/watch?v=JONzCyVXa60 'Add Dark Mode to any Website with a single line of code')
 
 ## State of this project
 
-This project is still in an prototyping stage, the API is still subject to change. 
+This project is still in an prototyping stage, the API is still subject to change.
 Please only use it with fixed Minor versions.
 
 ## Known issues
 
-* Position absolute and position fixed elements might not work as expected
-* The Toggle Button Overlay has weird paddings sometimes
+-   Position absolute and position fixed elements might not work as expected
+-   The Toggle Button Overlay has weird paddings sometimes
 
 ## Roadmap (maybe)
 
@@ -28,20 +28,24 @@ Please only use it with fixed Minor versions.
 Integration can be achieved by adding one of the following script tag to your website.
 
 Using a CDN :
+
 ```
 <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"></script>
 ```
+
 Using a local install :
 
 -First install Nightowl in your project using npm
+
 ```
 npm install @bufferhead/nightowl
 ```
+
 -Then add this <script> tag to your index:
+
 ```
 <script type="module" src="./node_modules/@bufferhead/nightowl/dist/nightowl.js"></script>
 ```
-
 
 ## Credits
 

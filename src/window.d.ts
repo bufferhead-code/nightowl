@@ -1,3 +1,3 @@
 interface Window {
-  defaultMode: string;
+    firstVisitMode: string
 }

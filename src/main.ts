@@ -1,14 +1,14 @@
-const LOCAL_STORAGE_KEY = "nightowl-color-scheme";
-const LIGHT = "light";
-const DARK = "dark";
-let store: Storage | null = null;
-let persistPreference = true;
-let mode = window.defaultMode === "dark" ? DARK : LIGHT;
+const LOCAL_STORAGE_KEY = 'nightowl-color-scheme'
+const LIGHT = 'light'
+const DARK = 'dark'
+let store: Storage | null = null
+const persistPreference = true
+let mode = window.firstVisitMode === 'dark' ? DARK : LIGHT
 
 try {
-  store = localStorage;
+    store = localStorage
 } catch (err) {
-  // Do nothing. The user probably blocks cookies.
+    // Do nothing. The user probably blocks cookies.
 }
 
 function loadCss() {
@@ -138,53 +138,53 @@ function initializeSwitcher() {
 }
 
 function initializeColorSchemeChangeListener() {
-  // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  //     const newColorScheme = e.matches ? "dark" : "light";
-  // });
+    // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    //     const newColorScheme = e.matches ? "dark" : "light";
+    // });
 }
 
 function checkForRememberedValue() {
-  let rememberedValue = null;
-  try {
-    if (store) {
-      rememberedValue = store.getItem(LOCAL_STORAGE_KEY);
+    let rememberedValue = null
+    try {
+        if (store) {
+            rememberedValue = store.getItem(LOCAL_STORAGE_KEY)
+        }
+    } catch (err) {
+        // Do nothing. The user probably blocks cookies.
     }
-  } catch (err) {
-    // Do nothing. The user probably blocks cookies.
-  }
-  console.log("storage", rememberedValue);
-  if (rememberedValue && [DARK, LIGHT].includes(rememberedValue)) {
-    mode = rememberedValue;
-  } else if (hasNativeDarkPrefersColorScheme()) {
-    mode = DARK;
-  }
+    console.log('storage', rememberedValue)
+    if (rememberedValue && [DARK, LIGHT].includes(rememberedValue)) {
+        mode = rememberedValue
+    } else if (hasNativeDarkPrefersColorScheme()) {
+        mode = DARK
+    }
 }
 
 function initializeNightowl() {
-  initializeColorSchemeChangeListener();
+    initializeColorSchemeChangeListener()
 
-  checkForRememberedValue();
+    checkForRememberedValue()
 
-  updateMode();
+    updateMode()
 }
 
 function storeModeInLocalStorage() {
-  if (persistPreference && mode !== null) {
-    try {
-      if (store) {
-        store.setItem(LOCAL_STORAGE_KEY, mode);
-      }
-    } catch (err) {
-      // Do nothing. The user probably blocks cookies.
+    if (persistPreference && mode !== null) {
+        try {
+            if (store) {
+                store.setItem(LOCAL_STORAGE_KEY, mode)
+            }
+        } catch (err) {
+            // Do nothing. The user probably blocks cookies.
+        }
     }
-  }
 }
 
 function hasNativeDarkPrefersColorScheme() {
-  return (
-    window.defaultMode === "dark" ||
-    (window.matchMedia &&
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ||
-        window.matchMedia("(prefers-color-scheme:dark)").matches))
-  );
+    return (
+        window.firstVisitMode === 'dark' ||
+        (window.matchMedia &&
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ||
+                window.matchMedia('(prefers-color-scheme:dark)').matches))
+    )
 }

@@ -5,9 +5,10 @@ let store: Storage | null = null
 const persistPreference = true
 let mode = LIGHT
 let automaticInitialization = true
-
+let toggleButtonMode = 'currentState'
 interface NightowlOptions {
     defaultMode?: 'light' | 'dark'
+    toggleButtonMode?: 'currentState' | 'newState'
 }
 
 try {
@@ -58,17 +59,19 @@ function loadCss() {
     document.head.appendChild(css)
 }
 
-export function createNightowl (options: NightowlOptions) {
+export function createNightowl(options: NightowlOptions) {
     automaticInitialization = false
     if (options.defaultMode === 'dark') {
         mode = DARK
     }
-    if(document.readyState === 'complete'){
+    if (options.toggleButtonMode) {
+        toggleButtonMode = options.toggleButtonMode
+    }
+    if (document.readyState === 'complete') {
         loadCss()
         initializeNightowl()
         initializeSwitcher()
-    }
-    else {
+    } else {
         window.addEventListener('load', () => {
             loadCss()
             initializeNightowl()
@@ -84,7 +87,6 @@ window.addEventListener('load', () => {
         initializeSwitcher()
     }
 })
-
 
 function enableDarkMode() {
     mode = DARK
@@ -130,14 +132,11 @@ function setSwitcherIcon() {
             '  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />\n' +
             '</svg>'
 
-        switcher.innerHTML =
-            window.buttonMode === 'inverted'
-                ? mode === DARK
-                    ? lightIcon
-                    : darkIcon
-                : mode === DARK
-                  ? darkIcon
-                  : lightIcon
+        if (toggleButtonMode === 'newState') {
+            switcher.innerHTML = mode === DARK ? lightIcon : darkIcon
+        } else if (toggleButtonMode === 'currentState') {
+            switcher.innerHTML = mode === DARK ? darkIcon : lightIcon
+        }
     }
 }
 
@@ -152,7 +151,7 @@ function initializeSwitcher() {
     switcher.style.height = '50px'
     switcher.style.borderRadius = '50%'
     switcher.style.backgroundColor =
-        window.buttonMode === 'inverted' ? 'black' : 'white'
+        toggleButtonMode === 'newState' ? 'black' : 'white'
     switcher.style.display = 'flex'
     switcher.style.justifyContent = 'center'
     switcher.style.alignItems = 'center'
@@ -161,7 +160,7 @@ function initializeSwitcher() {
     switcher.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)'
     switcher.style.transition = 'all 0.3s ease-in-out'
     switcher.style.overflow = 'hidden'
-    switcher.style.color = window.buttonMode === 'inverted' ? 'white' : 'black'
+    switcher.style.color = toggleButtonMode === 'newState' ? 'white' : 'black'
 
     switcher.addEventListener('click', () => {
         toggleMode()
@@ -217,8 +216,8 @@ function storeModeInLocalStorage() {
 
 function hasNativeDarkPrefersColorScheme() {
     return (
-        (window.matchMedia &&
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ||
-                window.matchMedia('(prefers-color-scheme:dark)').matches))
+        window.matchMedia &&
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ||
+            window.matchMedia('(prefers-color-scheme:dark)').matches)
     )
 }

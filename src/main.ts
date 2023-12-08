@@ -3,7 +3,12 @@ const LIGHT = 'light'
 const DARK = 'dark'
 let store: Storage | null = null
 const persistPreference = true
-let mode = window.firstVisitMode === 'dark' ? DARK : LIGHT
+let mode = LIGHT
+let automaticInitialization = true
+
+interface NightowlOptions {
+    defaultMode?: 'light' | 'dark'
+}
 
 try {
     store = localStorage
@@ -53,11 +58,33 @@ function loadCss() {
     document.head.appendChild(css)
 }
 
+export function createNightowl (options: NightowlOptions) {
+    automaticInitialization = false
+    if (options.defaultMode === 'dark') {
+        mode = DARK
+    }
+    if(document.readyState === 'complete'){
+        loadCss()
+        initializeNightowl()
+        initializeSwitcher()
+    }
+    else {
+        window.addEventListener('load', () => {
+            loadCss()
+            initializeNightowl()
+            initializeSwitcher()
+        })
+    }
+}
+
 window.addEventListener('load', () => {
-    loadCss()
-    initializeNightowl()
-    initializeSwitcher()
+    if (automaticInitialization) {
+        loadCss()
+        initializeNightowl()
+        initializeSwitcher()
+    }
 })
+
 
 function enableDarkMode() {
     mode = DARK
@@ -152,7 +179,7 @@ function checkForRememberedValue() {
     } catch (err) {
         // Do nothing. The user probably blocks cookies.
     }
-    console.log('storage', rememberedValue)
+
     if (rememberedValue && [DARK, LIGHT].includes(rememberedValue)) {
         mode = rememberedValue
     } else if (hasNativeDarkPrefersColorScheme()) {
@@ -182,7 +209,6 @@ function storeModeInLocalStorage() {
 
 function hasNativeDarkPrefersColorScheme() {
     return (
-        window.firstVisitMode === 'dark' ||
         (window.matchMedia &&
             (window.matchMedia('(prefers-color-scheme: dark)').matches ||
                 window.matchMedia('(prefers-color-scheme:dark)').matches))

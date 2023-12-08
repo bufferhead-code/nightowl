@@ -1,3 +1,0 @@
-interface Window {
-    firstVisitMode: string
-}

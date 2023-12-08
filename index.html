@@ -5,7 +5,14 @@
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Vite + TS</title>
-        <script type="module" src="/src/main.ts"></script>
+        <script type="module">
+            import {createNightowl} from '/src/main.ts'
+
+            createNightowl({
+                defaultMode: 'dark'
+            })
+
+        </script>
         <style>
             * {
                 font-family:

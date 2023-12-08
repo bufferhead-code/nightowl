@@ -45,7 +45,7 @@ npm install @bufferhead/nightowl
 
 ```
 <script type="module">
-    import {createNightowl} from '@bufferhead/nighowl'
+    import {createNightowl} from '@bufferhead/nightowl'
 
     createNightowl({
         defaultMode: 'dark',

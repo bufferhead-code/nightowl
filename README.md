@@ -27,25 +27,42 @@ Please only use it with fixed Minor versions.
 
 Integration can be achieved by adding one of the following script tag to your website.
 
-Using a CDN :
+Using a CDN:
 
 ```
 <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"></script>
 ```
 
-Using a local install :
+Install via npm:
 
--First install Nightowl in your project using npm
+-   First install Nightowl in your project using npm
 
 ```
 npm install @bufferhead/nightowl
 ```
 
--Then add this <script> tag to your index:
+-   Then add this <script> tag to your index:
 
 ```
-<script type="module" src="./node_modules/@bufferhead/nightowl/dist/nightowl.js"></script>
+<script type="module">
+    import {createNightowl} from '/src/main.ts'
+
+    createNightowl({
+        defaultMode: 'dark',
+        toggleButtonMode: 'newState'
+    })
+
+</script>
 ```
+
+## configuration Options
+
+-   defaultMode: 'dark' | 'light' (Default: 'light')
+    -   Sets the default mode for users that have not set a preference yet and do not have a system preference for dark mode
+-   toggleButtonMode: 'newState' | 'currentState' (Default: 'currentState')
+    -   Configures what state of the toggle button should be shown to the user
+        -   'newState' will show the state that will be applied when the user clicks the button
+        -   'currentState' will show the state that is currently applied to the website
 
 ## Credits
 

@@ -59,12 +59,22 @@ npm install @bufferhead/nightowl
 
 ## configuration Options
 
--   defaultMode: 'dark' | 'light' (Default: 'light')
-    -   Sets the default mode for users that have not set a preference yet and do not have a system preference for dark mode
--   toggleButtonMode: 'newState' | 'currentState' (Default: 'currentState')
-    -   Configures what state of the toggle button should be shown to the user
-        -   'newState' will show the state that will be applied when the user clicks the button
-        -   'currentState' will show the state that is currently applied to the website
+### defaultMode
+
+-   **Type:** `'light' | 'dark'`
+-   **Default:** `'light'`
+
+Sets the default mode for users that have not set a preference yet and do not have a system preference for dark mode
+
+### toggleButtonMode
+
+-   **Type:** `'currentState' | 'newState'`
+-   **Default:** `'currentState'`
+
+Configures what state of the toggle button should be shown to the user
+
+-   `currentState` - Shows the state that is currently applied to the website
+-   `newState` - Shows the state that will be applied when the user clicks the button
 
 ## Credits
 

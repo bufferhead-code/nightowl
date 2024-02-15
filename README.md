@@ -32,7 +32,7 @@ Using a CDN:
 ```html
 <script
     type="module"
-    src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"
+    src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
 ></script>
 ```
 

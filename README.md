@@ -20,8 +20,8 @@ Please only use it with fixed Minor versions.
 
 ## Roadmap (maybe)
 
-[] Add more utility classes for improving contrast
-[] Add better support for box-shadows
+-   [ ] Add more utility classes for improving contrast
+-   [ ] Add better support for box-shadows
 
 ## Integration
 

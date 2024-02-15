@@ -29,29 +29,31 @@ Integration can be achieved by adding one of the following script tag to your we
 
 Using a CDN:
 
-```
-<script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"></script>
+```html
+<script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.12/dist/nightowl.js"
+></script>
 ```
 
 Install via npm:
 
 -   First install Nightowl in your project using npm
 
-```
+```shell
 npm install @bufferhead/nightowl
 ```
 
 -   Then add this <script> tag to your index:
 
-```
+```html
 <script type="module">
-    import {createNightowl} from '@bufferhead/nightowl'
+    import { createNightowl } from '@bufferhead/nightowl'
 
     createNightowl({
         defaultMode: 'dark',
         toggleButtonMode: 'newState'
     })
-
 </script>
 ```
 

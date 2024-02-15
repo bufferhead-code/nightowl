@@ -25,9 +25,11 @@ Please only use it with fixed Minor versions.
 
 ## Integration
 
-Integration can be achieved by adding one of the following script tag to your website.
+Integration can be achieved by one of the following methods.
 
-Using a CDN:
+### CDN
+
+Add these lines to your HTML file:
 
 ```html
 <script
@@ -36,15 +38,15 @@ Using a CDN:
 ></script>
 ```
 
-Install via npm:
+### npm
 
--   First install Nightowl in your project using npm
+First install Nightowl with this command:
 
 ```shell
 npm install @bufferhead/nightowl
 ```
 
--   Then add this <script> tag to your index:
+Then add these lines to your HTML file:
 
 ```html
 <script type="module">

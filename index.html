@@ -33,6 +33,7 @@
             }
         </style>
     </head>
+
     <body>
         <header>
             <h1 style="text-align: center">Nightowl Demo Site</h1>
@@ -62,6 +63,42 @@
                 >
                     Fancy Button
                 </button>
+                <div>
+                    <p>Excluding dark mode</p>
+                    <button
+                        class="nightowl-exclude-dark"
+                        style="
+                            padding: 5px 10px;
+                            display: block;
+                            border-radius: 5px;
+                            background-color: rgb(2 132 199);
+                            font-weight: bold;
+                            font-size: 1.2rem;
+                            border: none;
+                            outline: unset;
+                            cursor: pointer;
+                        "
+                    >
+                        Fancy Button
+                    </button>
+                </div>
+                <div>
+                    <p>Background Image:</p>
+                    <div
+                        class="nightowl-bg-image"
+                        style="
+                            margin: 10px;
+                            position: relative;
+                            width: 100%; /* or specific dimensions */
+                            height: 500px; /* or specific dimensions */
+                            overflow: hidden;
+                            background-image: url('https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Path to your background image */
+                            background-size: cover;
+                            background-position: center;
+                        "
+                    ></div>
+                </div>
+
             </div>
         </header>
     </body>

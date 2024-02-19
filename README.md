@@ -78,6 +78,20 @@ Configures what state of the toggle button should be shown to the user.
 -   `currentState` - Shows the state that is currently applied to the website.
 -   `newState` - Shows the state that will be applied when the user clicks the button.
 
+## Usage Guide
+### Excluding Elements from Dark Mode
+If there are elements you wish to exclude from the dark mode conversion, perhaps due to their visual design or because they are already optimized for dark mode, add the `nightowl-exclude-dark` class to these elements.
+``` html
+<div class="nightowl-exclude-dark"></div>
+```
+
+### Marking Background Images for Dark Mode Conversion
+To ensure a background image within an element is appropriately converted or adjusted for dark mode, add the `nightowl-bg-image` class to the element. This class signals our package to apply dark mode optimizations specifically to the background image of the element.
+``` html
+<div class="nightowl-bg-image"></div>
+```
+
+
 ## Credits
 
 This project is heavily inspired by Aral Balkan who [wrote down this idea to implement dark mode in a few lines of CSS using CSS Filters](https://ar.al/2021/08/24/implementing-dark-mode-in-a-handful-of-lines-of-css-with-css-filters/).

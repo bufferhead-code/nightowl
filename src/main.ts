@@ -37,7 +37,7 @@ function loadCss() {
     }
 
     /* Do not invert media (revert the invert). */
-    .nightowl-dark img, .nightowl-dark video, .nightowl-dark iframe, .nightowl-dark .nightowl-daylight {
+    .nightowl-dark img, .nightowl-dark .nightowl-bg-image, .nightowl-dark video, .nightowl-dark iframe, .nightowl-dark .nightowl-daylight {
         filter: invert(100%) hue-rotate(180deg);
     }
 
@@ -54,6 +54,10 @@ function loadCss() {
     /* Improve contrast on list item markers. */
     .nightowl-dark li::marker {
         color: #666;
+    }
+    /* Excluding Elements from Dark Mode  */
+    .nightowl-dark .nightowl-exclude-dark {
+        filter: invert(100%) hue-rotate(180deg);
     }
     `
     document.head.appendChild(css)

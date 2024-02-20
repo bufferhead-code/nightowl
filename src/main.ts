@@ -1,3 +1,6 @@
+import './styles/global.css'
+import './styles/header.css'
+
 const LOCAL_STORAGE_KEY = 'nightowl-color-scheme'
 const LIGHT = 'light'
 const DARK = 'dark'

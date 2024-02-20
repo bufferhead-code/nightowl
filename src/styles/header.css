@@ -1,0 +1,81 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    padding-block: 2rem;
+    padding-inline: var(--page-padding-inline);
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+
+            li {
+                a {
+                    color: inherit;
+
+                    position: relative;
+
+                    font-weight: 500;
+
+                    text-decoration: none;
+
+                    &:not(.cta) {
+                        &::after {
+                            content: '';
+
+                            background-color: currentcolor;
+
+                            position: absolute;
+                            inset-block-end: 0;
+                            inset-inline: 0;
+
+                            block-size: 1px;
+
+                            transform: scaleX(0);
+
+                            transition: transform var(--animation-duration-fast)
+                                ease-in-out;
+                        }
+
+                        &:hover {
+                            &::after {
+                                transform: scaleX(100%);
+                            }
+                        }
+                    }
+
+                    &.cta {
+                        background-color: transparent;
+                        color: var(--color-primary);
+
+                        padding: 0.5rem 1.5rem;
+
+                        border: 1px solid var(--color-primary);
+                        border-radius: var(--border-radius);
+
+                        transition: var(--animation-duration-fast) ease-in-out;
+                        transition-property: background-color, color;
+
+                        text-transform: uppercase;
+
+                        &:hover {
+                            background-color: var(--color-primary);
+                            color: var(--color-primary-opposite);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

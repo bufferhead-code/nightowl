@@ -2,9 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + TS</title>
+        <title>Nightowl</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
         <script type="module">
             import { createNightowl } from '/src/main.ts'
 
@@ -13,56 +20,26 @@
                 toggleButtonMode: 'newState'
             })
         </script>
-        <style>
-            * {
-                font-family:
-                    ui-sans-serif,
-                    system-ui,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    'Segoe UI',
-                    Roboto,
-                    'Helvetica Neue',
-                    Arial,
-                    'Noto Sans',
-                    sans-serif,
-                    'Apple Color Emoji',
-                    'Segoe UI Emoji',
-                    'Segoe UI Symbol',
-                    'Noto Color Emoji';
-            }
-        </style>
     </head>
     <body>
         <header>
-            <h1 style="text-align: center">Nightowl Demo Site</h1>
-            <div
-                style="
-                    background-color: white;
-                    border: 1px solid #6666;
-                    box-shadow:
-                        0 4px 6px -1px rgb(0 0 0 / 0.1),
-                        0 2px 4px -2px rgb(0 0 0 / 0.1);
-                    padding: 10px 20px;
-                "
-            >
-                <p>A Card with some text</p>
-                <button
-                    style="
-                        padding: 5px 10px;
-                        display: block;
-                        border-radius: 5px;
-                        background-color: rgb(2 132 199);
-                        font-weight: bold;
-                        font-size: 1.2rem;
-                        border: none;
-                        outline: unset;
-                        cursor: pointer;
-                    "
-                >
-                    Fancy Button
-                </button>
-            </div>
+            <div class="logo">Nightowl</div>
+            <nav>
+                <ul>
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#contact" class="cta">Contact US</a></li>
+                </ul>
+            </nav>
         </header>
+        <main>
+            <section id="intro"></section>
+            <section id="features"></section>
+            <section id="statistics"></section>
+            <section id="team"></section>
+            <section id="contact"></section>
+        </main>
     </body>
 </html>

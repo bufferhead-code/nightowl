@@ -1,0 +1,89 @@
+:root {
+    --color-gray-98: hsl(0deg 0% 98%);
+    --color-gray-95: hsl(0deg 0% 95%);
+    --color-gray-90: hsl(0deg 0% 90%);
+    --color-gray-80: hsl(0deg 0% 80%);
+    --color-gray-70: hsl(0deg 0% 70%);
+    --color-gray-60: hsl(0deg 0% 60%);
+    --color-gray-50: hsl(0deg 0% 50%);
+    --color-gray-40: hsl(0deg 0% 40%);
+    --color-gray-30: hsl(0deg 0% 30%);
+    --color-gray-20: hsl(0deg 0% 20%);
+    --color-gray-16: hsl(0deg 0% 16%);
+    --color-gray-14: hsl(0deg 0% 14%);
+    --color-gray-12: hsl(0deg 0% 12%);
+    --color-gray-10: hsl(0deg 0% 10%);
+
+    --color-primary: hsl(261deg 66% 69%);
+    --color-primary-opposite: var(--color-gray-98);
+
+    --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
+    --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
+
+    --border-radius: 0.25rem;
+
+    --page-max-inline-size: 75rem;
+    --page-padding-inline: calc(
+        max(100% - var(--page-max-inline-size), 2rem) / 2
+    );
+
+    --animation-duration-fast: 0.2s;
+    --animation-duration-normal: 0.5s;
+    --animation-duration-slow: 1s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 2rem;
+
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'slnt' 0;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+    font-family: inherit;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    block-size: auto;
+    max-inline-size: 100%;
+}
+
+body {
+    background-color: var(--color-gray-98);
+    color: var(--color-gray-10);
+}

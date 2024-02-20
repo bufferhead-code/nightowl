@@ -15,10 +15,14 @@
     --color-gray-10: hsl(0deg 0% 10%);
 
     --color-primary: hsl(261deg 66% 69%);
+    --color-primary-darker: hsl(261deg 66% 60%);
     --color-primary-opposite: var(--color-gray-98);
 
     --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
     --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
+
+    --color-box-shadow-normal: hsl(0deg 0% 10% / 20%);
+    --box-shadow-normal: 0 0.5rem 1rem 0 var(--color-box-shadow-subtle);
 
     --border-radius: 0.25rem;
 
@@ -66,12 +70,8 @@ optgroup {
     font-family: inherit;
 }
 
-h1 {
-    text-align: center;
-}
-
 p {
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 ul {
@@ -86,4 +86,6 @@ img {
 body {
     background-color: var(--color-gray-98);
     color: var(--color-gray-10);
+
+    min-block-size: 100dvh;
 }

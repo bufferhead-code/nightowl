@@ -71,6 +71,8 @@ optgroup {
 }
 
 p {
+    color: var(--color-gray-40);
+
     line-height: 1.4;
 }
 
@@ -84,7 +86,7 @@ img {
 }
 
 body {
-    background-color: var(--color-gray-98);
+    background-color: var(--color-gray-95);
     color: var(--color-gray-10);
 
     min-block-size: 100dvh;

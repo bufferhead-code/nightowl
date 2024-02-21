@@ -64,3 +64,33 @@
         }
     }
 }
+
+@media (width < 1000px) {
+    #intro {
+        grid-template-areas: 'visuals' 'writings';
+        grid-template-columns: 1fr;
+        justify-items: center;
+
+        padding-block: 4rem;
+
+        text-align: center;
+
+        .writings {
+            justify-items: center;
+
+            h1 {
+                max-inline-size: 20ch;
+            }
+
+            p {
+                max-inline-size: 50ch;
+            }
+        }
+
+        .visuals {
+            .shape {
+                max-inline-size: 20rem;
+            }
+        }
+    }
+}

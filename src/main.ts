@@ -1,4 +1,5 @@
 import './styles/global.css'
+import './styles/button.css'
 import './styles/header.css'
 import './styles/intro.css'
 import './styles/features.css'

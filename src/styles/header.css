@@ -24,22 +24,7 @@ header {
     }
 
     button {
-        background-color: transparent;
-
-        border: none;
-        border-radius: var(--border-radius);
-
-        cursor: pointer;
-
-        transition: background-color var(--animation-duration-fast) ease-in-out;
-
-        &.close {
-            z-index: 2;
-        }
-
-        &:hover {
-            background-color: var(--color-gray-90);
-        }
+        z-index: 2;
     }
 
     nav {
@@ -78,29 +63,6 @@ header {
                     }
                 }
             }
-        }
-    }
-
-    .cta {
-        background-color: transparent;
-        color: var(--color-primary);
-
-        padding: 0.5rem 1.5rem;
-
-        border: 1px solid var(--color-primary);
-        border-radius: var(--border-radius);
-
-        transition: var(--animation-duration-fast) ease-in-out;
-        transition-property: background-color, color;
-
-        font-weight: 500;
-
-        text-decoration: none;
-        text-transform: uppercase;
-
-        &:hover {
-            background-color: var(--color-primary);
-            color: var(--color-primary-opposite);
         }
     }
 
@@ -147,11 +109,7 @@ header {
 
 @media (width >= 800px) {
     header {
-        .button.menu {
-            display: none;
-        }
-
-        .button.close {
+        button {
             display: none;
         }
 

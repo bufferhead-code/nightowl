@@ -40,7 +40,7 @@ Add these lines to your HTML file:
 
 ### npm
 
-First install Nightowl with this command:
+To use nightowl with a bundler like Vite first install it with this command:
 
 ```shell
 npm install @bufferhead/nightowl

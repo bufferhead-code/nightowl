@@ -23,7 +23,7 @@ function loadCss() {
     const css = document.createElement('style')
     css.innerHTML = `
     /* Prevent inconsistencies for positioning */
-    .nightowl-light body{
+    .nightowl-light body {
         filter: invert(0%);
     }
     

@@ -1,25 +1,49 @@
 header {
+    background-color: inherit;
+
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 2;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
     gap: 2rem;
 
     padding-block: 2rem;
     padding-inline: var(--page-padding-inline);
 
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: background-color, box-shadow, padding-block;
+
     .logo {
+        margin-inline-end: auto;
+
         font-size: 1.5rem;
         font-weight: 700;
     }
 
+    button {
+        background-color: transparent;
+
+        border: none;
+        border-radius: var(--border-radius);
+
+        cursor: pointer;
+
+        transition: background-color var(--animation-duration-fast) ease-in-out;
+
+        &.close {
+            z-index: 2;
+        }
+
+        &:hover {
+            background-color: var(--color-gray-90);
+        }
+    }
+
     nav {
         ul {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 2rem;
-
             li {
                 a {
                     color: inherit;
@@ -30,51 +54,112 @@ header {
 
                     text-decoration: none;
 
-                    &:not(.cta) {
-                        &::after {
-                            content: '';
+                    &::after {
+                        content: '';
 
-                            background-color: currentcolor;
+                        background-color: currentcolor;
 
-                            position: absolute;
-                            inset-block-end: 0;
-                            inset-inline: 0;
+                        position: absolute;
+                        inset-block-end: 0;
+                        inset-inline: 0;
 
-                            block-size: 1px;
+                        block-size: 1px;
 
-                            transform: scaleX(0);
+                        transform: scaleX(0);
 
-                            transition: transform var(--animation-duration-fast)
-                                ease-in-out;
-                        }
-
-                        &:hover {
-                            &::after {
-                                transform: scaleX(100%);
-                            }
-                        }
+                        transition: transform var(--animation-duration-fast)
+                            ease-in-out;
                     }
 
-                    &.cta {
-                        background-color: transparent;
-                        color: var(--color-primary);
-
-                        padding: 0.5rem 1.5rem;
-
-                        border: 1px solid var(--color-primary);
-                        border-radius: var(--border-radius);
-
-                        transition: var(--animation-duration-fast) ease-in-out;
-                        transition-property: background-color, color;
-
-                        text-transform: uppercase;
-
-                        &:hover {
-                            background-color: var(--color-primary);
-                            color: var(--color-primary-opposite);
+                    &:hover {
+                        &::after {
+                            transform: scaleX(100%);
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .cta {
+        background-color: transparent;
+        color: var(--color-primary);
+
+        padding: 0.5rem 1.5rem;
+
+        border: 1px solid var(--color-primary);
+        border-radius: var(--border-radius);
+
+        transition: var(--animation-duration-fast) ease-in-out;
+        transition-property: background-color, color;
+
+        font-weight: 500;
+
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-primary-opposite);
+        }
+    }
+
+    &.stuck {
+        background-color: var(--color-gray-98);
+        box-shadow: var(--box-shadow-subtle);
+
+        padding-block: 1rem;
+    }
+}
+
+@media (width < 800px) {
+    header {
+        button {
+            order: 3;
+        }
+
+        nav {
+            background-color: var(--color-gray-98);
+
+            position: fixed;
+            inset: 0;
+            overflow: auto;
+            z-index: 1;
+
+            display: grid;
+            align-content: start;
+
+            padding: inherit;
+
+            font-size: 1.5rem;
+
+            ul {
+                display: grid;
+                gap: 2rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    }
+}
+
+@media (width >= 800px) {
+    header {
+        .button.menu {
+            display: none;
+        }
+
+        .button.close {
+            display: none;
+        }
+
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
             }
         }
     }

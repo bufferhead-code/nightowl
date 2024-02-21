@@ -20,19 +20,60 @@
                 toggleButtonMode: 'newState'
             })
         </script>
+        <script type="module" src="/src/scripts/header.ts"></script>
     </head>
     <body>
         <header>
             <div class="logo">Nightowl</div>
-            <nav>
+            <button
+                class="button button--icon menu"
+                aria-label="Open navigation menu"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 17h8m-8-5h14m-8-5h8"
+                    />
+                </svg>
+            </button>
+            <button
+                class="button button--icon close hidden"
+                aria-label="Close navigation menu"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m18 18l-6-6m0 0L6 6m6 6l6-6m-6 6l-6 6"
+                    />
+                </svg>
+            </button>
+            <nav class="hidden">
                 <ul>
                     <li><a href="#intro">Intro</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#statistics">Statistics</a></li>
                     <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact" class="cta">Contact US</a></li>
                 </ul>
             </nav>
+            <a href="#contact" class="cta">Contact US</a>
         </header>
         <main>
             <section id="intro">

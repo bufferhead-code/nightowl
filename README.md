@@ -40,7 +40,7 @@ Add these lines to your HTML file:
 
 ### npm
 
-First install Nightowl with this command:
+To use nightowl with a bundler like Vite first install it with this command:
 
 ```shell
 npm install @bufferhead/nightowl
@@ -78,19 +78,26 @@ Configures what state of the toggle button should be shown to the user.
 -   `currentState` - Shows the state that is currently applied to the website.
 -   `newState` - Shows the state that will be applied when the user clicks the button.
 
+
+## Contribution Guidelines
+
+Please open an issue and wait for one of the Maintainers to approve it until you open a merge request. 
+
+
 ## Usage Guide
 ### Excluding Elements from Dark Mode
+
 If there are elements you wish to exclude from the dark mode conversion, perhaps due to their visual design or because they are already optimized for dark mode, add the `nightowl-exclude-dark` class to these elements.
 ``` html
 <div class="nightowl-exclude-dark"></div>
 ```
 
 ### Marking Background Images for Dark Mode Conversion
+
 To ensure a background image within an element is appropriately converted or adjusted for dark mode, add the `nightowl-bg-image` class to the element. This class signals our package to apply dark mode optimizations specifically to the background image of the element.
 ``` html
 <div class="nightowl-bg-image"></div>
 ```
-
 
 ## Credits
 

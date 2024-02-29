@@ -1,0 +1,84 @@
+#contact {
+    display: grid;
+    grid-template-areas: 'h2' 'p' 'visuals' 'form';
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    padding-block: 4rem;
+    padding-inline: var(--page-padding-inline);
+
+    h2 {
+        grid-area: h2;
+    }
+
+    > p {
+        grid-area: p;
+
+        margin-block-end: 1rem;
+    }
+
+    .visuals {
+        grid-area: visuals;
+
+        display: grid;
+        place-items: center;
+
+        .shape {
+            box-shadow: var(--box-shadow-normal);
+
+            overflow: hidden;
+
+            max-block-size: 25rem;
+            max-inline-size: 80%;
+            aspect-ratio: 1;
+
+            border-radius: var(--border-radius-blob);
+
+            img {
+                block-size: 100%;
+                inline-size: 100%;
+                max-inline-size: unset;
+                object-fit: cover;
+            }
+        }
+    }
+
+    form {
+        grid-area: form;
+
+        display: grid;
+        align-content: start;
+        gap: 1.5rem;
+
+        label {
+            display: grid;
+            gap: 0.25rem;
+
+            input,
+            textarea {
+                padding: 0.5rem;
+
+                border: 1px solid var(--color-gray-50);
+                border-radius: var(--border-radius);
+
+                font-size: 1.25rem;
+            }
+
+            textarea {
+                resize: vertical;
+            }
+        }
+
+        button {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media (width >= 800px) {
+    #contact {
+        grid-template-areas: 'h2 h2' 'p p' 'visuals form';
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}

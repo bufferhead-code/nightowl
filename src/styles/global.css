@@ -25,6 +25,7 @@
     --box-shadow-normal: 0 0.5rem 1rem 0 var(--color-box-shadow-subtle);
 
     --border-radius: 0.25rem;
+    --border-radius-blob: 33% 67% 38% 62% / 26% 32% 68% 74%;
 
     --page-max-inline-size: 75rem;
     --page-padding-inline: calc(
@@ -46,8 +47,10 @@
 }
 
 html {
+    accent-color: var(--color-primary);
+
     scroll-behavior: smooth;
-    scroll-padding: 2rem;
+    scroll-padding: 5rem;
 
     font-family: 'Inter', sans-serif;
     font-optical-sizing: auto;

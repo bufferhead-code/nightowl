@@ -80,18 +80,18 @@ Configures what state of the toggle button should be shown to the user.
 
 ## Customize Dark Mode
 
-You can exclude elements from being inverted in dark mode using the `.nightowl-daylight` CSS class. Just add it to an element and it will show the element in the same way as the light mode. 
+You can exclude elements from being inverted in dark mode using the `.nightowl-daylight` CSS class. Just add it to an element and it will show the element in the same way as the light mode.
 
 ```html
 <div>
-  <p>I'm inverted in Dark Mode</p>
-  <p class="nightowl-daylight">I'm not inverted in Dark Mode</p>
+    <p>I'm inverted in Dark Mode</p>
+    <p class="nightowl-daylight">I'm not inverted in Dark Mode</p>
 </div>
 ```
 
 ## Contribution Guidelines
 
-Please open an issue and wait for one of the Maintainers to approve it until you open a merge request. 
+Please open an issue and wait for one of the Maintainers to approve it until you open a merge request.
 
 ## Credits
 

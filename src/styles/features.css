@@ -1,6 +1,13 @@
 #features {
+    display: grid;
+    gap: 1rem;
+
     padding-block: 4rem;
     padding-inline: var(--page-padding-inline);
+
+    > p {
+        margin-block-end: 1rem;
+    }
 
     > ul {
         display: grid;

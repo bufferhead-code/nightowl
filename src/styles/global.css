@@ -50,7 +50,7 @@ html {
     accent-color: var(--color-primary);
 
     scroll-behavior: smooth;
-    scroll-padding: 5rem;
+    scroll-padding: 4rem;
 
     font-family: 'Inter', sans-serif;
     font-optical-sizing: auto;

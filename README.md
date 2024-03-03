@@ -1,5 +1,8 @@
 ![image](https://github.com/bufferhead-code/nightowl/assets/6266887/6dbd652a-0307-4d2b-ac9e-26230b8b59c7)
 
+> [!NOTE]
+> Check out **solidtime - The modern Open Source Time-Tracker** at [solidtime.io](https://www.solidtime.io)
+
 ## Nightowl
 
 A "micro-framework" (\*hacky script) that adds dark mode to any website with a single line of code.

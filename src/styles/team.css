@@ -1,0 +1,46 @@
+#team {
+    display: grid;
+    gap: 1rem;
+
+    padding-block: 4rem;
+    padding-inline: var(--page-padding-inline);
+
+    > p {
+        margin-block-end: 1rem;
+    }
+
+    > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 2rem;
+
+        > li {
+            background-color: var(--color-gray-98);
+            box-shadow: var(--box-shadow-normal);
+
+            display: grid;
+            align-content: start;
+            justify-items: center;
+            gap: 1rem;
+
+            padding: 1rem;
+
+            border-radius: var(--border-radius);
+
+            text-align: center;
+
+            .writings {
+                .name {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+
+                    text-transform: capitalize;
+                }
+
+                p {
+                    max-inline-size: 45ch;
+                }
+            }
+        }
+    }
+}

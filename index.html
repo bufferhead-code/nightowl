@@ -2,9 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + TS</title>
+        <title>Nightowl</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
         <script type="module">
             import { createNightowl } from '/src/main.ts'
 
@@ -13,56 +20,285 @@
                 toggleButtonMode: 'newState'
             })
         </script>
-        <style>
-            * {
-                font-family:
-                    ui-sans-serif,
-                    system-ui,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    'Segoe UI',
-                    Roboto,
-                    'Helvetica Neue',
-                    Arial,
-                    'Noto Sans',
-                    sans-serif,
-                    'Apple Color Emoji',
-                    'Segoe UI Emoji',
-                    'Segoe UI Symbol',
-                    'Noto Color Emoji';
-            }
-        </style>
+        <script type="module" src="/src/scripts/header.ts"></script>
     </head>
     <body>
         <header>
-            <h1 style="text-align: center">Nightowl Demo Site</h1>
-            <div
-                style="
-                    background-color: white;
-                    border: 1px solid #6666;
-                    box-shadow:
-                        0 4px 6px -1px rgb(0 0 0 / 0.1),
-                        0 2px 4px -2px rgb(0 0 0 / 0.1);
-                    padding: 10px 20px;
-                "
+            <div class="logo">Nightowl</div>
+            <button
+                class="button button--icon menu"
+                aria-label="Open navigation menu"
             >
-                <p>A Card with some text</p>
-                <button
-                    style="
-                        padding: 5px 10px;
-                        display: block;
-                        border-radius: 5px;
-                        background-color: rgb(2 132 199);
-                        font-weight: bold;
-                        font-size: 1.2rem;
-                        border: none;
-                        outline: unset;
-                        cursor: pointer;
-                    "
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
                 >
-                    Fancy Button
-                </button>
-            </div>
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 17h8m-8-5h14m-8-5h8"
+                    />
+                </svg>
+            </button>
+            <button
+                class="button button--icon close hidden"
+                aria-label="Close navigation menu"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m18 18l-6-6m0 0L6 6m6 6l6-6m-6 6l-6 6"
+                    />
+                </svg>
+            </button>
+            <nav class="hidden">
+                <ul>
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="button button--outlined cta">
+                Contact Us
+            </a>
         </header>
+        <main>
+            <section id="intro">
+                <div class="writings">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. A assumenda blanditiis esse ex inventore molestias
+                        odit perferendis qui reprehenderit totam. Atque beatae
+                        dicta, fuga illo laudantium porro rerum ullam vitae.
+                    </p>
+                    <a href="#contact" class="button button--solid">
+                        Contact Us
+                    </a>
+                </div>
+                <div class="visuals">
+                    <div class="shape">
+                        <img
+                            src="/assets/images/hero.webp"
+                            alt="A tall skyscraper among many buildings in a city"
+                        />
+                    </div>
+                </div>
+            </section>
+            <section id="features">
+                <h2>Features</h2>
+                <p>
+                    Aut consequuntur cum esse ex explicabo iure, magnam maiores
+                    perferendis qui tempora?
+                </p>
+                <ul>
+                    <li>
+                        <div class="visual">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24"
+                                viewBox="0 -960 960 960"
+                                width="24"
+                            >
+                                <path
+                                    d="M418-340q24 24 62 23.5t56-27.5l169-253q9-14-2.5-25.5T677-625L424-456q-27 18-28.5 55t22.5 61Zm62-460q36 0 71 6t68 19q16 6 34 22.5t10 31.5q-8 15-36 20t-45-1q-25-9-50.5-13.5T480-720q-133 0-226.5 93.5T160-400q0 42 11.5 83t32.5 77h552q23-38 33.5-79t10.5-85q0-26-4.5-51T782-504q-6-17-2-33t18-27q13-10 28.5-6t21.5 18q15 35 23 71.5t9 74.5q1 57-13 109t-41 99q-11 18-30 28t-40 10H204q-21 0-40-10t-30-28q-26-45-40-95.5T80-400q0-83 31.5-155.5t86-127Q252-737 325-768.5T480-800Zm7 313Z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="title">Fast</div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Architecto, error facere modi nobis pariatur
+                            placeat quis quos unde vitae voluptate.
+                        </p>
+                    </li>
+                    <li>
+                        <div class="visual">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24"
+                                viewBox="0 -960 960 960"
+                                width="24"
+                            >
+                                <path
+                                    d="m212-212 282-100-182-182-100 282Zm709-467q-9 9-21 9t-21-9l-3-3q-14-14-35-14t-35 14L603-479q-9 9-21 9t-21-9q-9-9-9-21t9-21l203-203q32-32 77-32t77 32l3 3q9 9 9 21t-9 21ZM399-799q9-9 21-9t21 9l5 5q32 32 32 76t-32 76l-3 3q-9 9-21 9t-21-9q-9-9-9-21t9-21l3-3q14-14 14-34t-14-34l-5-5q-9-9-9-21t9-21Zm162-80q9-9 21-9t21 9l43 43q32 32 32 77t-32 77L523-559q-9 9-21 9t-21-9q-9-9-9-21t9-21l123-123q14-14 14-35t-14-35l-43-43q-9-9-9-21t9-21Zm320 480q-9 9-21 9t-21-9l-43-43q-14-14-35-14t-35 14l-43 43q-9 9-21 9t-21-9q-9-9-9-21t9-21l43-43q32-32 77-32t77 32l43 43q9 9 9 21t-9 21ZM212-212Zm-104 52 151-420q5-13 15.5-20t22.5-7q8 0 15 3t13 9l270 270q6 6 9 13t3 15q0 12-7 22.5T580-259L160-108q-12 5-23 1.5T118-118q-8-8-11.5-19t1.5-23Z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="title">Fun</div>
+                        <p>
+                            Amet animi earum error expedita hic illo, impedit in
+                            laboriosam nam, necessitatibus optio provident quia
+                            quibusdam sit tempore vel, voluptate?
+                        </p>
+                    </li>
+                    <li>
+                        <div class="visual">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24"
+                                viewBox="0 -960 960 960"
+                                width="24"
+                            >
+                                <path
+                                    d="m187-343-41 114q-5 14-16 21.5t-25 7.5q-23 0-36.5-19.5T63-261l176-469q5-14 17-22t26-8h36q15 0 26.5 8t16.5 22l177 470q8 22-5.5 41T496-200q-14 0-26-8t-17-22l-40-113H187Zm29-81h168l-82-232h-4l-82 232Zm504-16h-80q-17 0-28.5-11.5T600-480q0-17 11.5-28.5T640-520h80v-80q0-17 11.5-28.5T760-640q17 0 28.5 11.5T800-600v80h80q17 0 28.5 11.5T920-480q0 17-11.5 28.5T880-440h-80v80q0 17-11.5 28.5T760-320q-17 0-28.5-11.5T720-360v-80Z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="title">Easy</div>
+                        <p>
+                            Adipisci assumenda expedita ipsa necessitatibus
+                            nihil pariatur quaerat quas recusandae reiciendis
+                            tempore ullam, ut. Eum fugit iste iusto nostrum
+                            quod?
+                        </p>
+                    </li>
+                    <li>
+                        <div class="visual">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24"
+                                viewBox="0 -960 960 960"
+                                width="24"
+                            >
+                                <path
+                                    d="M480-120q-17 0-28.5-11.5T440-160v-160q0-17 11.5-28.5T480-360q17 0 28.5 11.5T520-320v40h280q17 0 28.5 11.5T840-240q0 17-11.5 28.5T800-200H520v40q0 17-11.5 28.5T480-120Zm-320-80q-17 0-28.5-11.5T120-240q0-17 11.5-28.5T160-280h160q17 0 28.5 11.5T360-240q0 17-11.5 28.5T320-200H160Zm160-160q-17 0-28.5-11.5T280-400v-40H160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h120v-40q0-17 11.5-28.5T320-600q17 0 28.5 11.5T360-560v160q0 17-11.5 28.5T320-360Zm160-80q-17 0-28.5-11.5T440-480q0-17 11.5-28.5T480-520h320q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H480Zm160-160q-17 0-28.5-11.5T600-640v-160q0-17 11.5-28.5T640-840q17 0 28.5 11.5T680-800v40h120q17 0 28.5 11.5T840-720q0 17-11.5 28.5T800-680H680v40q0 17-11.5 28.5T640-600Zm-480-80q-17 0-28.5-11.5T120-720q0-17 11.5-28.5T160-760h320q17 0 28.5 11.5T520-720q0 17-11.5 28.5T480-680H160Z"
+                                />
+                            </svg>
+                        </div>
+                        <div class="title">Tunable</div>
+                        <p>
+                            Alias autem blanditiis cupiditate doloremque illum
+                            minima odit possimus provident quasi quidem
+                            repellat, similique sunt tenetur ullam unde veniam
+                            veritatis.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <section id="statistics">
+                <div class="visuals">
+                    <img
+                        src="/assets/illustrations/chart.svg"
+                        alt="A pie chart that represents some fake data for illustration purpose"
+                    />
+                </div>
+                <div class="writings">
+                    <h2>Statistics</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. A, aliquid, animi assumenda blanditiis cupiditate
+                        debitis eligendi, enim facere fuga fugiat fugit ipsa
+                        labore magnam quibusdam quo quos sapiente sunt velit
+                        vitae voluptate! Accusantium aliquam animi assumenda,
+                        necessitatibus quod rem repudiandae?
+                    </p>
+                    <a href="#" class="button button--outlined cta">
+                        Read More
+                    </a>
+                </div>
+            </section>
+            <section id="team">
+                <h2>Our Team</h2>
+                <p>Aliquid architecto nisi quisquam sapiente sed.</p>
+                <ul>
+                    <li>
+                        <div class="visuals">
+                            <div class="shape">
+                                <img
+                                    src="/assets/images/teammate-1.jpg"
+                                    alt="A woman sitting in nature working with laptop and smoking"
+                                />
+                            </div>
+                        </div>
+                        <div class="writings">
+                            <div class="name">nisi quisquam</div>
+                            <p>
+                                Beatae dolores eligendi fugit ipsam laudantium
+                                neque quaerat rem vero vitae voluptatem!
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="visuals">
+                            <div class="shape">
+                                <img
+                                    src="/assets/images/teammate-2.jpg"
+                                    alt="A man looking away and smiling with forest in the background"
+                                />
+                            </div>
+                        </div>
+                        <div class="writings">
+                            <div class="name">eligendi fugit</div>
+                            <p>
+                                Accusantium animi cumque enim excepturi fuga
+                                ipsa non perferendis quasi sit voluptatibus.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="visuals">
+                            <div class="shape">
+                                <img
+                                    src="/assets/images/teammate-3.jpg"
+                                    alt="A man looking at the camera and smiling"
+                                />
+                            </div>
+                        </div>
+                        <div class="writings">
+                            <div class="name">excepturi fuga</div>
+                            <p>
+                                Esse expedita iste laboriosam quis suscipit.
+                                Cumque eum sit suscipit voluptatem voluptatum.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Nulla placeat quod tempore unde voluptates voluptatum?</p>
+                <div class="visuals">
+                    <div class="shape">
+                        <img
+                            src="/assets/images/contact.webp"
+                            alt="Teammates gathering around a table and working together"
+                        />
+                    </div>
+                </div>
+                <form>
+                    <label>
+                        Name:
+                        <input type="text" name="name" autocomplete="name" />
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" name="email" autocomplete="email" />
+                    </label>
+                    <label>
+                        Message:
+                        <textarea name="message" rows="3"></textarea>
+                    </label>
+                    <button type="button" class="button button--solid">
+                        Contact Us
+                    </button>
+                </form>
+            </section>
+        </main>
     </body>
 </html>

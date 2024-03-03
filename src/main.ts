@@ -1,3 +1,12 @@
+import './styles/global.css'
+import './styles/button.css'
+import './styles/header.css'
+import './styles/intro.css'
+import './styles/features.css'
+import './styles/statistics.css'
+import './styles/team.css'
+import './styles/contact.css'
+
 const LOCAL_STORAGE_KEY = 'nightowl-color-scheme'
 const LIGHT = 'light'
 const DARK = 'dark'

@@ -1,0 +1,40 @@
+#statistics {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    padding-block: 4rem;
+    padding-inline: var(--page-padding-inline);
+
+    .visuals {
+        img {
+            max-block-size: 30rem;
+            inline-size: 100%;
+        }
+    }
+
+    .writings {
+        display: grid;
+        justify-items: start;
+        gap: 1rem;
+
+        p {
+            margin-block-end: 1rem;
+
+            max-inline-size: 60ch;
+        }
+    }
+}
+
+@media (width < 1000px) {
+    #statistics {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        .writings {
+            justify-items: center;
+        }
+    }
+}
